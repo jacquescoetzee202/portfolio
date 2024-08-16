@@ -7,11 +7,12 @@ import {
 import stylesheet from "~/tailwind.css?url";
 
 import type { LinksFunction } from "@remix-run/node";
-// export const Links: LinksFunction = () => [
-//   { rel: "stylesheet", href: stylesheet },
-// ];
 
-export default function App() {
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
+
+export default function Root() {
     return (
         <html>
             <head>
@@ -23,7 +24,6 @@ export default function App() {
                 <Links />
             </head>
             <body>
-                <h1>Hello world!</h1>
                 <Outlet />
                 <Scripts />
             </body>
