@@ -6,10 +6,5 @@ export default defineConfig({
     remix({
       ssr: false
     })
-  ],
-  resolve: {
-    alias: {
-      "~": "./",
-    },
-  },
+  ]
 });

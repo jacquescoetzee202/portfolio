@@ -4,7 +4,7 @@ import {
     Links,
     Scripts,
 } from "@remix-run/react";
-import stylesheet from "~/tailwind.css?url";
+import stylesheet from "./tailwind.css?url";
 
 import type { LinksFunction } from "@remix-run/node";
 
