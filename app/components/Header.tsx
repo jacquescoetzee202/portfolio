@@ -3,17 +3,17 @@
 import logo from '../assets/JC.svg';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { useState } from 'react';
+import { NavLink } from '@remix-run/react';
 
 const navigation = [
-    { name: 'Home', href: '#', current: true },
-    { name: 'About Me', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Contact', href: '#', current: false },
+    { name: 'Home', to: '' },
+    { name: 'About', to: 'about' },
+    { name: 'Projects', to: 'projects' },
+    { name: 'Contact', to: 'contact' },
 ]
 
 /* TODO:
-- use the remix inbuilt link highlighting
+- NavLink active styling
 - tap into theming for colours
 - use dark and light mode color classes
 */
@@ -46,18 +46,27 @@ export default function Header() {
                                 key={item.name}
                                 className='flex justify-center'
                             >
-                                <DisclosureButton
-                                    as="a"
-                                    href={item.href}
-                                    aria-current={item.current ? 'page' : undefined}
-                                    className="block rounded-md px-3 py-2 text-base font-medium"
-                                // className={classNames(
-                                //     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                //     'block rounded-md px-3 py-2 text-base font-medium',
-                                // )}
+                                <NavLink
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                        ? "active"
+                                        : isPending
+                                        ? "pending"
+                                        : ""
+                                    }
+                                    to={`${item.to}`}
                                 >
-                                    {item.name}
-                                </DisclosureButton>
+                                    <DisclosureButton
+                                        className="block rounded-md px-3 py-2 text-base font-medium"
+                                    // className={classNames(
+                                    //     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                    //     'block rounded-md px-3 py-2 text-base font-medium',
+                                    // )}
+                                    >
+
+                                        {item.name}
+                                    </DisclosureButton>
+                                </NavLink>
                             </li>
                         ))} 
                 </DisclosurePanel>

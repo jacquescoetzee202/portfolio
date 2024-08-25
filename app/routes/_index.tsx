@@ -1,10 +1,5 @@
-import Header from '../components/Header';
-
 export default function Index() {
     return (
-        <div>
-            <Header/>
-            <h1>Hello Tauranga</h1>
-        </div>
+        <h1 className='text-8xl bg-primary-50'>Home</h1>
     )
 }

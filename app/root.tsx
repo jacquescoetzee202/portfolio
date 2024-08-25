@@ -5,6 +5,7 @@ import {
     Scripts,
 } from "@remix-run/react";
 import stylesheet from "./tailwind.css?url";
+import Header from './components/Header';
 
 import type { LinksFunction } from "@remix-run/node";
 
@@ -24,6 +25,7 @@ export default function Root() {
                 <Links />
             </head>
             <body>
+                <Header/>
                 <Outlet />
                 <Scripts />
             </body>
