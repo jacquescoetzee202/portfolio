@@ -2,11 +2,9 @@ import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
 
 const globalColors = {
-  brand: colors.blue,
-  neutral: colors.slate,
-  error: colors.red,
-  success: colors.green,
-  warning: colors.yellow
+  primary: colors.indigo,
+  secondary: colors.yellow,
+  neutral: colors.gray,
 };
 
 // fontFamily: {
@@ -49,22 +47,22 @@ export default {
     extend: {
       colors: globalColors,
       backgroundColor: {
-        "brand-primary": globalColors.brand[600],
-        "brand-primary-hover": globalColors.brand[500],
-        "brand-secondary": globalColors.brand[100],
-        "brand-secondary-hover": globalColors.brand[200],
+        "brand-primary": globalColors.primary[600],
+        "brand-primary-hover": globalColors.primary[500],
+        "brand-secondary": globalColors.primary[100],
+        "brand-secondary-hover": globalColors.primary[200],
         "neutral-primary": colors.white,
         "neutral-secondary": globalColors.neutral[50],
         // ...your other global colors like errors, success, warning
       },
       borderColor: {
-        "brand-primary": globalColors.brand[400],
-        "neutral-primary": globalColors.brand[300],
+        "brand-primary": globalColors.primary[400],
+        "neutral-primary": globalColors.primary[300],
         // ...your other global colors like neutrals, errors, success, warning
       },
       textColor: {
         "brand-onprimary": colors.white,
-        "brand-onsecondary": globalColors.brand[800],
+        "brand-onsecondary": globalColors.primary[800],
         // NOTE: "neutral-*" can even be "primary", "secondary", and "emphasis" given most text is neutral
         "neutral-primary": globalColors.neutral[800],
         "neutral-secondary": globalColors.neutral[500],

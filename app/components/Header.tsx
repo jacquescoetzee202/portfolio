@@ -15,9 +15,6 @@ const navigationLinks = [
     { name: 'Contact', to: 'contact' },
 ]
 
-const primaryButtonStyling = "bg-brand-primary hover:bg-brand-primary-hover text-brand-onprimary";
-const secondaryButtonStyling = "bg-brand-secondary hover:bg-brand-seconday-hover text-brand-onsecondary";
-
 /* TODO:
 - NavLink active styling
 - tap into theming for colours
@@ -28,7 +25,7 @@ export default function Header() {
     const navigation = useNavigation();
 
     return (
-        <header className='bg-white'>
+        <header>
             <Disclosure as="nav">
                 <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b-4 border-black">
                     <div className="flex">
@@ -43,11 +40,11 @@ export default function Header() {
                                 className='flex justify-center text-sm font-semibold leading-6 px-4 py-2'
                             >
                                 <NavLink
-                                className={({ isActive, isPending }) =>
-                                    isActive
-                                        ? primaryButtonStyling
-                                        : secondaryButtonStyling
-                                }
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? `hover:text-green-600 border-green-600 border-b-2`
+                                            : 'hover:text-green-600'
+                                    }
                                     to={`${item.to}`}
                                 >
                                     {item.name}
@@ -75,17 +72,13 @@ export default function Header() {
                             <NavLink
                                 className={({ isActive, isPending }) =>
                                     isActive
-                                        ? primaryButtonStyling
-                                        : secondaryButtonStyling
+                                        ? `hover:text-green-600 border-green-600 border-b-2`
+                                        : 'hover:text-green-600'
                                 }
                                 to={`${item.to}`}
                             >
                                 <DisclosureButton
                                     className="block rounded-md px-3 py-2 text-base font-medium"
-                                // className={classNames(
-                                //     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                //     'block rounded-md px-3 py-2 text-base font-medium',
-                                // )}
                                 >
 
                                     {item.name}
