@@ -53,7 +53,7 @@ export default function Header() {
                         ))}
                     </ul>
                     <DarkModeToggle className='hidden lg:flex' />
-                    <div className="flex lg:hidden">
+                    <div className="flex lg:hidden z-10">
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Open main menu</span>
@@ -63,7 +63,7 @@ export default function Header() {
                     </div>
                 </div>
 
-                <DisclosurePanel as="ul" className="lg:hidden space-y-1 px-2 pb-3 pt-2 flex flex-col">
+                <DisclosurePanel as="ul" className="lg:hidden space-y-1 px-2 pb-3 pt-2 flex flex-col absolute top-0 w-screen h-screen bg-slate-50/95">
                     {navigationLinks.map((item) => (
                         <li
                             key={item.name}
@@ -72,8 +72,8 @@ export default function Header() {
                             <NavLink
                                 className={({ isActive, isPending }) =>
                                     isActive
-                                        ? `hover:text-green-600 border-green-600 border-b-2`
-                                        : 'hover:text-green-600'
+                                        ? `hover:text-green-600 border-green-600 border-b-2 my-2`
+                                        : 'hover:text-green-600 my-2'
                                 }
                                 to={`${item.to}`}
                             >
