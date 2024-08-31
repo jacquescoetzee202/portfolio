@@ -13,7 +13,7 @@ export default function DarkModeToggle({className}: DrakModeToggleProps) {
     }
     // Set up dark light mode properly
     return (
-        <button onClick={toggleDarMode} className={`flex items-center justify-center h-10 w-10 rounded-full bg-gray-200 ${className}`}>
+        <button onClick={toggleDarMode} className={`flex items-center justify-center h-10 w-10 rounded-full ${className}`}>
             {darkMode ? <MoonIcon /> : <SunIcon />}
         </button>
     )
