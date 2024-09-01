@@ -6,7 +6,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { NavLink } from '@remix-run/react';
 import DarkModeToggle from './DarkModeToggle'
 import { useNavigation } from '@remix-run/react';
-import { classNames } from 'app/utils';
 
 const navigationLinks = [
     { name: 'Home', to: '' },
@@ -16,7 +15,6 @@ const navigationLinks = [
 ]
 
 /* TODO:
-- NavLink active styling
 - tap into theming for colours
 - use dark and light mode color classes
 */

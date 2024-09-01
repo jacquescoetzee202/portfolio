@@ -19,7 +19,7 @@ export const links: LinksFunction = () => [
 
 export default function Root() {
     return (
-        <html>
+        <html className="font-default">
             <head>
                 <link
                     rel="icon"
