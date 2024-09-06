@@ -19,9 +19,9 @@ function validateEmail(email: string) {
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
-  const name = String(formData.get("name"));
+  const name = String(formData.get("name")) ?? "";
   const email = String(formData.get("email"));
-  const message = String(formData.get("message"));
+  const message = String(formData.get("message")) ?? "";
 
   const errors: formSubmission = {};
 
@@ -41,7 +41,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     return json({ errors });
   }
 
-  await sendContactMessage({ name, message });
+  await sendContactMessage({ name, message, email });
 
   // send the email ?
   // success response route
