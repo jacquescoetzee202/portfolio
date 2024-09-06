@@ -3,12 +3,8 @@ import { ActionFunctionArgs, json, redirect } from "@remix-run/node";
 import whatsapp from "../assets/WhatsAppButtonWhiteLarge.svg";
 import StockButton from "../components/StockButton";
 import ContactHeroSection from "../components/ContactHeroSection";
-
-interface formSubmission {
-  name?: string;
-  email?: string;
-  message?: string;
-}
+import type { formSubmission } from "../types/contact";
+import { sendContactMessage } from "../.server/mailing/resend";
 
 function validateEmail(email: string) {
   /* Regular expression pattern for validating email addresses
@@ -21,14 +17,12 @@ function validateEmail(email: string) {
 }
 
 export const action = async ({ request }: ActionFunctionArgs) => {
-  // get entries
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
   const name = String(formData.get("name"));
   const email = String(formData.get("email"));
   const message = String(formData.get("message"));
 
-  // validate the values
   const errors: formSubmission = {};
 
   if (!validateEmail(email)) {
@@ -39,13 +33,16 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     errors.name = "Please enter a name";
   }
 
-  if(!message.length){
-
+  if (!message.length) {
+    errors.message = "Please provide a message";
   }
 
   if (Object.keys(errors).length > 0) {
     return json({ errors });
   }
+
+  await sendContactMessage({ name, message });
+
   // send the email ?
   // success response route
   // fail response route

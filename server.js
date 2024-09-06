@@ -1,4 +1,5 @@
 import { createRequestHandler } from "@remix-run/express";
+import 'dotenv/config'
 import express from "express";
 
 const viteDevServer =
