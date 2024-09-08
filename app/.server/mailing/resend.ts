@@ -2,14 +2,13 @@ import { Resend } from 'resend';
 import { formSubmission } from '../../types/contact';
 import type { ReactNode } from "react";
 
-import { EmailTemplate } from './contactMessageTemplate';
+import { EmailTemplate } from './EmailTemplate';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromAddress = process.env.RESEND_FROM_ADDRESS ?? 'Acme <onboarding@resend.dev>';
 const toAddress = process.env.RESEND_TO_ADDRESS ?? 'delivered@resend.dev';
 
 /** TODO
- * - create html template
  * - sanitize message for html template 'express-validator'
  * - escape any html characters put in by user 'he' npm package
 **/

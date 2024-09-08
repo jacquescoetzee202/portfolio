@@ -4,6 +4,9 @@
   "description": "portfolio website",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
   "scripts": {
     "dev": "node --inspect ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
