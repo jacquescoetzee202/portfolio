@@ -41,9 +41,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     return json({ errors });
   }
 
+  // send the email ?
   await sendContactMessage({ name, message, email });
 
-  // send the email ?
   // success response route
   // fail response route
   // sucess or fail responses, toast ?

@@ -1,28 +1,28 @@
 # Base node image
-FROM node:22-alpine as base
+FROM node:22-alpine AS base
 
 # Install all node_modules, including dev dependencies
-FROM base as deps
+FROM base AS deps
 
 # set for base and all layer that inherit from it
-ENV NODE_ENV production
+ENV NODE_ENV="production"
 
 WORKDIR /app
 
-ADD package.json .npmrc ./
+ADD package.json ./
 RUN npm install --include=dev
 
 # Setup production node_modules
-FROM base as production-deps
+FROM base AS production-deps
 
 WORKDIR /app
 
 COPY --from=deps /app/node_modules /app/node_modules
-ADD package.json .npmrc ./
+ADD package.json ./
 RUN npm prune --omit=dev
 
 # Build the app
-FROM base as build
+FROM base AS build
 
 WORKDIR /app
 
