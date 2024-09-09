@@ -23,7 +23,7 @@ resource "docker_container" "portfolio_remix_container" {
   name  = "portfolio_remix_container"
 
   env = [
-    "RESEND_API_KEY=re_55YVDp2q_FicYRVcq2hBKZTcCyzqp86YN"
+    var.RESEND_ENV_SETTING
   ]
 
   ports {
