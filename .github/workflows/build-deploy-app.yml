@@ -7,7 +7,7 @@ env:
   AZURE_WEBAPP_NAME: container-test-wapp
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
