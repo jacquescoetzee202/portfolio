@@ -3,3 +3,9 @@
 /public/build/
 /.cache/
 node_modules/
+
+# Terraform
+variables.tf
+infrastructure/*/.terraform/
+.terraform.lock.hcl
+terraform.tfstate*
