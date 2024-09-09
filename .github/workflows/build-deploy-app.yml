@@ -5,7 +5,6 @@ name: Build and deploy a container to an Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: container-test-wapp
-  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
 on:
   push:
@@ -19,6 +18,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
     steps:
       - uses: actions/checkout@v4
