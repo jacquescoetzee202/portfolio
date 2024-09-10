@@ -30,6 +30,7 @@ COPY --from=deps /app/node_modules /app/node_modules
 
 ADD . .
 RUN npm run build
+RUN ls /app
 
 # Build production image
 FROM base
