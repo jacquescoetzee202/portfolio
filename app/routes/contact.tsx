@@ -53,7 +53,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function Contact() {
   return (
-    <div className="container mx-auto max-w-2xl px-6 py-24 sm:py-32 lg:px-8 is">
+    <>
       <ContactHeroSection />
       <Form
         id="contact-form"
@@ -104,6 +104,6 @@ export default function Contact() {
           <StockButton className="w-full">Let's talk</StockButton>
         </p>
       </Form>
-    </div>
+    </>
   );
 }
