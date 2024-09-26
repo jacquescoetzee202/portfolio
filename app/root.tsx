@@ -1,11 +1,6 @@
-import {
-    Meta,
-    Outlet,
-    Links,
-    Scripts,
-} from "@remix-run/react";
+import { Meta, Outlet, Links, Scripts } from "@remix-run/react";
 import stylesheet from "./tailwind.css?url";
-import Header from './components/Header';
+import Layout from "./components/Layout";
 
 // https://dev.to/mindactuate/scroll-to-anchor-element-with-react-router-v6-38op scroll to section of page
 
@@ -18,21 +13,20 @@ export const links: LinksFunction = () => [
 ];
 
 export default function Root() {
-    return (
-        <html className="font-default">
-            <head>
-                <link
-                    rel="icon"
-                    href="data:image/x-icon;base64,AA"
-                />
-                <Meta />
-                <Links />
-            </head>
-            <body className="bg-slate-50">
-                <Header/>
-                <Outlet />
-                <Scripts />
-            </body>
-        </html>
-    );
+  return (
+    <html className="font-default">
+      <head>
+        <link rel="icon" href="data:image/x-icon;base64,AA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <Meta />
+        <Links />
+      </head>
+      <body className="bg-slate-50">
+        <Layout>
+          <Outlet />
+        </Layout>
+        <Scripts />
+      </body>
+    </html>
+  );
 }
