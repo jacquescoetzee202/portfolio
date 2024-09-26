@@ -14,18 +14,13 @@ const navigationLinks = [
     { name: 'Contact', to: 'contact' },
 ]
 
-/* TODO:
-- tap into theming for colours
-- use dark and light mode color classes
-*/
-
 export default function Header() {
     const navigation = useNavigation();
 
     return (
         <header>
             <Disclosure as="nav">
-                <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b-4 border-black">
+                <div className="flex items-center justify-between p-6 lg:px-8 border-b-4 border-black">
                     <div className="flex">
                         <a href="#" className="-m-1.5 p-1.5">
                             <img alt="logo" src={logo} className="h-8 w-auto" />
