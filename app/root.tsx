@@ -21,7 +21,7 @@ export default function Root() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-50">
+      <body>
         <Layout>
           <Outlet />
         </Layout>
