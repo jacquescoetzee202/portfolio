@@ -1,10 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
+# settting up azure publish profile https://learn.microsoft.com/en-gb/azure/app-service/deploy-github-actions?tabs=applevel%2Caspnetcore#set-up-a-github-actions-workflow-manually
+
 name: Build and deploy a container to an Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: container-test-wapp
+  AZURE_WEBAPP_NAME: dev-portfolio-as
 
 on:
   push:
@@ -64,5 +66,5 @@ jobs:
         uses: azure/webapps-deploy@85270a1854658d167ab239bce43949edb336fa7c
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_92b3938d985146b2a030f1f1c041844a }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: 'ghcr.io/${{ env.REPO }}:${{ github.sha }}'
