@@ -1,10 +1,11 @@
-import { Form, useActionData, Outlet } from "@remix-run/react";
+import { Form, useActionData, Outlet, useNavigation } from "@remix-run/react";
 import { ActionFunctionArgs, json, redirect } from "@remix-run/node";
 import whatsapp from "../assets/WhatsAppButtonWhiteLarge.svg";
 import StockButton from "../components/StockButton";
 import ContactHeroSection from "../components/ContactHeroSection";
 import type { formSubmission } from "../types/contact";
 import { sendContactMessage } from "../.server/mailing/resend";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function validateEmail(email: string) {
   /* Regular expression pattern for validating email addresses
@@ -17,7 +18,6 @@ function validateEmail(email: string) {
 }
 
 function validateMessage(message: string): [boolean, string] {
-  console.log({ messageLength: message.length });
   if (!message.length) return [false, "Please enter a message"];
   if (message.length > 10000)
     return [
@@ -37,7 +37,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const errors: formSubmission = {};
 
   if (!validateEmail(email)) {
-    errors.email = "Please enter a valid email address (e.g., user@example.com)";
+    errors.email =
+      "Please enter a valid email address (e.g., user@example.com)";
   }
 
   if (!name.length) {
@@ -45,8 +46,6 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   }
 
   const [isValidMessage, messageError] = validateMessage(message);
-
-  console.log({isValidMessage,messageError});
 
   if (!isValidMessage) {
     errors.message = messageError;
@@ -63,6 +62,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function Contact() {
   const actionData = useActionData<typeof action>();
+  const { state } = useNavigation();
 
   return (
     <>
@@ -125,9 +125,15 @@ export default function Contact() {
             </p>
           ) : null}
         </div>
-        <p>
-          <StockButton className="w-full">Let's talk</StockButton>
-        </p>
+        <StockButton className="w-full">
+          <div className="flex items-center justify-center min-h-10">
+            <div className="w-8 h-8"></div>
+            <p className="grow">Let's talk</p>
+            <div className="w-8 h-8">
+              <LoadingSpinner active={state !== "idle"} />
+            </div>
+          </div>
+        </StockButton>
       </Form>
     </>
   );
