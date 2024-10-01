@@ -17,8 +17,8 @@ function validateEmail(email: string) {
 }
 
 function validateMessage(message: string): [boolean, string] {
-  console.log({ messageLenght: message.length });
-  if (!message.length) [false, "Please enter a message"];
+  console.log({ messageLength: message.length });
+  if (!message.length) return [false, "Please enter a message"];
   if (message.length > 10000)
     return [
       false,
@@ -45,6 +45,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   }
 
   const [isValidMessage, messageError] = validateMessage(message);
+
+  console.log({isValidMessage,messageError});
 
   if (!isValidMessage) {
     errors.message = messageError;
