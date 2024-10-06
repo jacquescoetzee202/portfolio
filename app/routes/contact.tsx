@@ -1,6 +1,5 @@
 import { Form, useActionData, Outlet, useNavigation } from "@remix-run/react";
 import { ActionFunctionArgs, json, redirect } from "@remix-run/node";
-import whatsapp from "../assets/WhatsAppButtonWhiteLarge.svg";
 import StockButton from "../components/StockButton";
 import ContactHeroSection from "../components/ContactHeroSection";
 import type { formSubmission } from "../types/contact";
@@ -29,10 +28,9 @@ function validateMessage(message: string): [boolean, string] {
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
-  const updates = Object.fromEntries(formData);
-  const name = String(formData.get("name")) ?? "";
-  const email = String(formData.get("email"));
-  const message = String(formData.get("message")) ?? "";
+  const name = String(formData.get("name") ?? "");
+  const email = String(formData.get("email") ?? "");
+  const message = String(formData.get("message") ?? "");
 
   const errors: formSubmission = {};
 
@@ -65,7 +63,7 @@ export default function Contact() {
   const { state } = useNavigation();
 
   return (
-    <>
+    <div className="container mx-auto max-w-2xl px-6 py-24 sm:py-32 lg:px-8">
       <ContactHeroSection />
       <Outlet />
       <Form
@@ -128,13 +126,13 @@ export default function Contact() {
         <StockButton className="w-full">
           <div className="flex items-center justify-center">
             <div className="w-6 h-6"></div>
-            <p className="grow">Let's talk</p>
+            <p className="grow">Let&apos;s talk</p>
             <div className="w-6 h-6">
               <LoadingSpinner active={state !== "idle"} />
             </div>
           </div>
         </StockButton>
       </Form>
-    </>
+    </div>
   );
 }
