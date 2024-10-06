@@ -1,9 +1,7 @@
-
-// inspiration -> https://tailwindui.com/components/marketing/elements/headers
-import logo from '../assets/JC.svg';
+import logo from '../assets/JC_logo_s50.svg';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { NavLink } from '@remix-run/react';
+import { Link, NavLink } from '@remix-run/react';
 import DarkModeToggle from './DarkModeToggle'
 import { useNavigation } from '@remix-run/react';
 
@@ -22,9 +20,9 @@ export default function Header() {
             <Disclosure as="nav">
                 <div className="flex items-center justify-between p-6 lg:px-8 border-b-4 border-black">
                     <div className="flex">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <img alt="logo" src={logo} className="h-8 w-auto" />
-                        </a>
+                        <Link to="">
+                            <img alt="logo" src={logo} className="h-12 w-auto" />
+                        </Link>
                     </div>
                     <ul className='hidden lg:flex'>
                         {navigationLinks.map((item) => (
@@ -45,7 +43,8 @@ export default function Header() {
                             </li>
                         ))}
                     </ul>
-                    <DarkModeToggle className='hidden lg:flex' />
+                    <div className='w-12 h-12'/>
+                    {/* <DarkModeToggle className='hidden lg:flex' /> */}
                     <div className="flex lg:hidden z-10">
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute -inset-0.5" />

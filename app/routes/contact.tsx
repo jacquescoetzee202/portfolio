@@ -126,10 +126,10 @@ export default function Contact() {
           ) : null}
         </div>
         <StockButton className="w-full">
-          <div className="flex items-center justify-center min-h-10">
-            <div className="w-8 h-8"></div>
+          <div className="flex items-center justify-center">
+            <div className="w-6 h-6"></div>
             <p className="grow">Let's talk</p>
-            <div className="w-8 h-8">
+            <div className="w-6 h-6">
               <LoadingSpinner active={state !== "idle"} />
             </div>
           </div>
