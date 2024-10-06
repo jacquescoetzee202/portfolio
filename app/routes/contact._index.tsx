@@ -1,3 +1,3 @@
-export default function ContactIndex(){
-    return null;
+export default function ContactIndex() {
+  return null;
 }

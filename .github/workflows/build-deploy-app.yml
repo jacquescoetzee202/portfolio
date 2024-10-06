@@ -14,8 +14,8 @@ on:
       - main
 
 permissions:
-  contents: 'read'
-  packages: 'write'
+  contents: "read"
+  packages: "write"
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
     needs: build
 
     environment:
-      name: 'production'
+      name: "production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -67,4 +67,4 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'ghcr.io/${{ env.REPO }}:${{ github.sha }}'
+          images: "ghcr.io/${{ env.REPO }}:${{ github.sha }}"
