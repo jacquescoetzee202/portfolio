@@ -1,6 +1,6 @@
-# IAC to run Porfolio site in Azure
+# IAC to run Portfolio site in Azure
 
-Terraform has been used to create the infrastructure as code for my portfolio website to run within the cloud. This allows for the applicaiton to be quickly created and destroyed in a repeatable mannor.
+Terraform has been used to create the infrastructure as code for my portfolio website to run within the cloud. This allows for the application to be quickly created and destroyed in a repeatable manor.
 
 ## To create the Azure App Service to host the site follow these steps
 
@@ -10,7 +10,7 @@ You will need both terraform and Azure CLI tool installed on your machine. Set u
 
 ### Populate the variables.tf
 
-This file has been added to .gitignore so you will first need to create a variables.tf file in the same locaiton as the main.tf. Insert the following content into variables.tf and replace placeholder text for actual keys.
+This file has been added to .gitignore so you will first need to create a variables.tf file in the same location as the main.tf. Insert the following content into variables.tf and replace placeholder text for actual keys.
 
 ```
 variable "PREFIX" {
@@ -27,7 +27,7 @@ variable "LOCATION" {
 
 variable "RESEND_API_KEY" {
     type = string
-    description = "resend email eservice api key"
+    description = "resend email service api key"
     default = "{enter a api key}"
 }
 ```
@@ -96,7 +96,7 @@ inspect the current state
 terraform show
 ```
 
-for furhter options see:
+for further options see:
 
 ```
 terraform state

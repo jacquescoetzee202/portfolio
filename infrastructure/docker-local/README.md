@@ -1,4 +1,4 @@
-# IAC for Docker desktop to run Porfolio site
+# IAC for Docker desktop to run Portfolio site
 
 Terraform has been used to create the infrastructure as code for my portfolio website to run locally on Docker. This is to provide a local testing environment which reflects the deployed version.
 
@@ -14,7 +14,7 @@ open -a Docker
 
 ### Populate the variables.tf
 
-This file has been added to .gitignore so you will first need to create a variables.tf file in the same locaiton as the main.tf. Insert the following content into variables.tf and replace placeholder text for actual keys.
+This file has been added to .gitignore so you will first need to create a variables.tf file in the same location as the main.tf. Insert the following content into variables.tf and replace placeholder text for actual keys.
 
 ```
 variable "RESEND_ENV_SETTING" {
