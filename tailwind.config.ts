@@ -56,11 +56,12 @@ const customColors = {
   },
 };
 
-const brandColors = {
+const brandColor = {
   violet: customColors.melrose[300],
   yellow: customColors.negroni[100],
   green: customColors.jungleMist[300],
   red: customColors.pastelPink[200],
+  white: "#f5f5f5",
 };
 
 export default {
@@ -72,7 +73,7 @@ export default {
     extend: {
       colors: {
         ...customColors,
-        brandColors,
+        brandColor,
       },
     },
   },
