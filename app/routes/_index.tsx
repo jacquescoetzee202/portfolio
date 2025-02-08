@@ -1,5 +1,6 @@
 import Hero from "../components/home/Hero";
 import SkillsOverview from "../components/home/SkillsOverview";
+import Testimonials from "../components/home/testimonials/Testimonials";
 // import UnderConstruction from "../components/UnderConstruction";
 
 export default function Index() {
@@ -10,6 +11,9 @@ export default function Index() {
       </div>
       <div className="border-b-2 border-black py-24 sm:py-32">
         <SkillsOverview />
+      </div>
+      <div className="bg-brandColor-yellow border-b-2 border-black py-24 sm:py-32">
+        <Testimonials />
       </div>
     </body>
 );
