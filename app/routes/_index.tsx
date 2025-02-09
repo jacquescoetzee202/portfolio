@@ -12,9 +12,9 @@ export default function Index() {
       <div className="border-b-2 border-black py-24 sm:py-32">
         <SkillsOverview />
       </div>
-      <div className="bg-brandColor-yellow border-b-2 border-black py-24 sm:py-32">
+      <div className="bg-brandColor-yellow border-b-2 border-black py-24 sm:py-32 px-12 sm:px-24">
         <Testimonials />
       </div>
     </body>
-);
+  );
 }
