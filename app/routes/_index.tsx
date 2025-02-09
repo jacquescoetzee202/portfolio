@@ -1,9 +1,11 @@
 import Hero from "../components/home/Hero";
 import SkillsOverview from "../components/home/SkillsOverview";
 import Testimonials from "../components/home/testimonials/Testimonials";
-// import UnderConstruction from "../components/UnderConstruction";
+import useHydrated from "../hooks/useHydrated";
 
 export default function Index() {
+  const hydrated = useHydrated();
+
   return (
     <body className="border-x-2 border-black bg-white flex flex-col min-h-screen">
       <div className="bg-brandColor-violet border-b-2 border-black py-24 sm:py-32">
@@ -13,7 +15,7 @@ export default function Index() {
         <SkillsOverview />
       </div>
       <div className="bg-brandColor-yellow border-b-2 border-black py-24 sm:py-32 px-12 sm:px-24">
-        <Testimonials />
+        {hydrated && <Testimonials />}
       </div>
     </body>
   );
