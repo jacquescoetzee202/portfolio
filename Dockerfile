@@ -41,7 +41,7 @@ WORKDIR /app
 
 COPY --from=production-deps /app/node_modules /app/node_modules
 
-COPY --from=build /app/build /app/build
+COPY --from=build /app/build/server /app/build/server
 COPY --from=build /app/package.json /app/package.json
 ADD . .
 

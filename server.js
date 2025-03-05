@@ -6,15 +6,21 @@ const viteDevServer =
   process.env.NODE_ENV === "production"
     ? null
     : await import("vite").then((vite) =>
-        vite.createServer({
-          server: { middlewareMode: true },
-        }),
-      );
+      vite.createServer({
+        server: { middlewareMode: true },
+      }),
+    );
 
 const app = express();
-app.use(
-  viteDevServer ? viteDevServer.middlewares : express.static("build/client"),
-);
+
+// handle asset requests
+if (viteDevServer) {
+  app.use(viteDevServer.middlewares);
+} else {
+  app.use(
+    viteDevServer ? viteDevServer.middlewares : express.static("build/client"),
+  );
+}
 
 const build = viteDevServer
   ? () => viteDevServer.ssrLoadModule("virtual:remix/server-build")
