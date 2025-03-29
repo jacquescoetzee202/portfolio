@@ -1,5 +1,5 @@
-import { Form, useActionData, Outlet, useNavigation } from "@remix-run/react";
-import { ActionFunctionArgs, json, redirect } from "@remix-run/node";
+import { Form, useActionData, Outlet, useNavigation } from "react-router";
+import { ActionFunctionArgs, redirect } from "react-router";
 import StockButton from "../components/StockButton";
 import ContactHeroSection from "../components/ContactHeroSection";
 import type { formSubmission } from "../types/contact";
@@ -50,7 +50,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   }
 
   if (Object.keys(errors).length > 0) {
-    return json({ errors });
+    return { errors };
   }
 
   await sendContactMessage({ name, message, email });

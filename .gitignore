@@ -3,6 +3,7 @@
 /public/build/
 /.cache/
 node_modules/
+.react-router/
 
 # Terraform
 variables.tf

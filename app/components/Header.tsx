@@ -5,7 +5,7 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { Link, NavLink } from "@remix-run/react";
+import { Link, NavLink } from "react-router";
 
 const navigationLinks = [
   { name: "Home", to: "" },

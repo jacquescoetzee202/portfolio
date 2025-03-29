@@ -1,8 +1,8 @@
-import { Meta, Outlet, Links, Scripts } from "@remix-run/react";
+import { Meta, Outlet, Links, Scripts } from "react-router";
 import stylesheet from "./tailwind.css?url";
 import Layout from "./components/Layout";
 
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from "react-router";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
