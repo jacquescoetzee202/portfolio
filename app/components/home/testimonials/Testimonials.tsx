@@ -40,7 +40,7 @@ export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLUListElement>(
     {
       initial: 0,
       loop: true,
@@ -93,13 +93,13 @@ export default function Testimonials() {
           </div>
 
           <div className="-mx-6 lg:col-span-2 lg:mx-0 relative">
-            <div ref={sliderRef} className="keen-slider">
+            <ul ref={sliderRef} className="keen-slider">
               {colleaguesArray.map((colleague) => (
-                <div key={colleague.firstName} className="keen-slider__slide">
+                <li key={colleague.firstName} className="keen-slider__slide">
                   <TestimonialCard {...colleague} />
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <div className="absolute inset-y-0 left-0 w-10 sm:w-20 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-10 sm:w-20 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none"></div>
           </div>
