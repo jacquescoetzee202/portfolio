@@ -7,7 +7,7 @@ export default function Index() {
   const hydrated = useHydrated();
 
   return (
-    <body className="border-x-2 border-black flex flex-col min-h-screen">
+    <div className="border-x-2 border-black flex flex-col min-h-screen">
       <div className="bg-brandColor-violet border-b-2 border-black py-24 sm:py-32">
         <Hero />
       </div>
@@ -17,6 +17,6 @@ export default function Index() {
       <div className="bg-brandColor-yellow border-b-2 border-black py-24 sm:py-32 px-12 sm:px-24">
         {hydrated && <Testimonials />}
       </div>
-    </body>
+    </div>
   );
 }
