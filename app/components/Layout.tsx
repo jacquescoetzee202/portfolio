@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 interface LayoutProps {
@@ -10,6 +11,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className="mx-auto max-w-7xl bg-slate-50 min-h-screen">
         <Header />
         <div className="mx-auto">{children}</div>
+        <Footer />
       </div>
     </div>
   );

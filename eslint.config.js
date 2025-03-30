@@ -8,7 +8,7 @@ export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   { settings: { react: { version: "detect" } } },
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat["jsx-runtime"],
 ];
