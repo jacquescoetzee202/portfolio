@@ -5,7 +5,7 @@ import babel from "vite-plugin-babel";
 
 const ReactCompilerConfig = {
   logger: {
-    logEvent(filename, event) {
+    logEvent(filename: string, event: { kind: 'CompileSuccess' | 'CompileError' }) {
       if (event.kind === 'CompileSuccess') {
         console.log('Compiled:', filename);
       }
