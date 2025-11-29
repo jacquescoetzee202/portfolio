@@ -1,5 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;400;600;700&display=swap");
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Theme configuration */
+@theme {
+  /* Font families */
+  --font-ibm: "IBM Plex Mono", Menlo, monospace;
+  --default-font-family: var(--font-ibm);
+
+  /* Custom colors - Melrose */
+  --color-melrose-50: #f4f3ff;
+  --color-melrose-100: #ece9fe;
+  --color-melrose-200: #dbd6fe;
+  --color-melrose-300: #c8befd;
+  --color-melrose-400: #a18bfa;
+  --color-melrose-500: #835df5;
+  --color-melrose-600: #733bec;
+  --color-melrose-700: #6429d8;
+  --color-melrose-800: #5422b5;
+  --color-melrose-900: #461d95;
+  --color-melrose-950: #2a1065;
+
+  /* Custom colors - Negroni */
+  --color-negroni-50: #fff6ed;
+  --color-negroni-100: #fee3c6;
+  --color-negroni-200: #fdd3ab;
+  --color-negroni-300: #fbb376;
+  --color-negroni-400: #f8883f;
+  --color-negroni-500: #f5681a;
+  --color-negroni-600: #e64e10;
+  --color-negroni-700: #bf390f;
+  --color-negroni-800: #982e14;
+  --color-negroni-900: #7a2914;
+  --color-negroni-950: #421208;
+
+  /* Custom colors - Jungle Mist */
+  --color-jungleMist-50: #f5f9fa;
+  --color-jungleMist-100: #eaf2f4;
+  --color-jungleMist-200: #d0e2e7;
+  --color-jungleMist-300: #b7d4da;
+  --color-jungleMist-400: #78aeb8;
+  --color-jungleMist-500: #5794a0;
+  --color-jungleMist-600: #437986;
+  --color-jungleMist-700: #37626d;
+  --color-jungleMist-800: #31525b;
+  --color-jungleMist-900: #2d464d;
+  --color-jungleMist-950: #1e2e33;
+
+  /* Custom colors - Pastel Pink */
+  --color-pastelPink-50: #fdf3f5;
+  --color-pastelPink-100: #fbe8eb;
+  --color-pastelPink-200: #f3c4cd;
+  --color-pastelPink-300: #efb2bd;
+  --color-pastelPink-400: #e6869b;
+  --color-pastelPink-500: #d85b7a;
+  --color-pastelPink-600: #c33b62;
+  --color-pastelPink-700: #a32d52;
+  --color-pastelPink-800: #89284a;
+  --color-pastelPink-900: #762544;
+  --color-pastelPink-950: #411021;
+
+  /* Brand colors */
+  --color-brandColor-violet: #c8befd;
+  --color-brandColor-yellow: #fee3c6;
+  --color-brandColor-green: #b7d4da;
+  --color-brandColor-red: #f3c4cd;
+  --color-brandColor-white: #f5f5f5;
+}

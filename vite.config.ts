@@ -2,6 +2,7 @@ import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import babel from "vite-plugin-babel";
+import tailwindcss from "@tailwindcss/vite";
 
 const ReactCompilerConfig = {
   logger: {
@@ -15,6 +16,7 @@ const ReactCompilerConfig = {
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     reactRouter(),
     tsconfigPaths(),
     babel({
@@ -25,5 +27,6 @@ export default defineConfig({
           ["babel-plugin-react-compiler", ReactCompilerConfig],
         ],
       },
-    }),],
+    }),
+  ],
 });
