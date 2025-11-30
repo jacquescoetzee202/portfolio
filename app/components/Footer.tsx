@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import github from "../assets/github-mark-white.svg";
 import linkedin from "../assets/InBug-White.png";
 
@@ -40,28 +41,35 @@ export default function Footer() {
                     className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800"
                 >
                     <div>
-                        <p className="font-medium text-gray-900 dark:text-white">Site Map</p>
+                        <a
+                            href="/sitemap.xml"
+                            className="font-medium text-gray-900 dark:text-white hover:opacity-75 transition"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Site Map
+                        </a>
 
                         <ul className="mt-6 space-y-4 text-sm">
                             <li>
-                                <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <Link to="/" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <Link to="/about" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     About
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <Link to="/projects" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Projects
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <Link to="/contact" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
