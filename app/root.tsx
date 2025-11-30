@@ -1,4 +1,4 @@
-import { Meta, Outlet, Links, Scripts } from "react-router";
+import { Meta, Outlet, Links, Scripts, ScrollRestoration } from "react-router";
 import stylesheet from "./tailwind.css?url";
 import Layout from "./components/Layout";
 
@@ -24,6 +24,7 @@ export default function Root() {
         <Layout>
           <Outlet />
         </Layout>
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
