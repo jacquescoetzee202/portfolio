@@ -81,7 +81,7 @@ export default function Contact() {
             name="name"
             type="text"
             placeholder="name"
-            className="my-1 w-full rounded-md border-gray-200 shadow-sm"
+            className="my-1 py-1.5 px-3 w-full rounded-md border border-gray-200 block bg-transparent  text-base shadow-sm placeholder:text-gray-300"
           />
           {actionData?.errors?.name ? (
             <p className="font-medium text-red-500">
@@ -99,7 +99,7 @@ export default function Contact() {
             name="email"
             type="email"
             placeholder="email@dreamcompany.com"
-            className="my-1 w-full rounded-md border-gray-200 shadow-sm"
+            className="my-1 py-1.5 px-3 w-full rounded-md border border-gray-200 block bg-transparent text-base shadow-sm placeholder:text-gray-300"
           />
           {actionData?.errors?.email ? (
             <p className="font-medium text-red-500">
@@ -115,7 +115,7 @@ export default function Contact() {
             id="message"
             name="message"
             rows={6}
-            className="my-1 w-full rounded-md border-gray-200 shadow-sm"
+            className="my-1 py-1.5 px-3 w-full rounded-md border border-gray-200 block bg-transparent text-base shadow-sm placeholder:text-gray-300"
           />
           {actionData?.errors?.message ? (
             <p className="font-medium text-red-500">
