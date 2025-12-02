@@ -1,14 +1,13 @@
 import { Resend } from "resend";
 import { formSubmission } from "../../types/contact";
-import type { ReactNode } from "react";
 import escape from "validator/lib/escape";
 
+import { env } from "../env";
 import { EmailTemplate } from "./EmailTemplate";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromAddress =
-  process.env.RESEND_FROM_ADDRESS ?? "Acme <onboarding@resend.dev>";
-const toAddress = process.env.RESEND_TO_ADDRESS ?? "delivered@resend.dev";
+const resend = new Resend(env.RESEND_API_KEY);
+const fromAddress = env.RESEND_FROM_ADDRESS;
+const toAddress = env.RESEND_TO_ADDRESS;
 
 export async function sendContactMessage({
   name,

@@ -1,9 +1,10 @@
 import { createRequestHandler } from "@react-router/express";
 import "dotenv/config";
 import express from "express";
+import { env } from "./app/.server/env.ts";
 
 const viteDevServer =
-  process.env.NODE_ENV === "production"
+  env.NODE_ENV === "production"
     ? null
     : await import("vite").then((vite) =>
       vite.createServer({
@@ -28,6 +29,6 @@ const build = viteDevServer
 
 app.all("*", createRequestHandler({ build }));
 
-app.listen(process.env.PORT, () => {
-  console.log(`App listening on http://localhost:${process.env.PORT}`);
+app.listen(env.PORT, () => {
+  console.log(`App listening on http://localhost:${env.PORT}`);
 });
