@@ -13,8 +13,8 @@ export default function Hero() {
                 </div>
             </div>
             <div className="mt-8 flex justify-center space-x-4 max-w-xl mx-auto">
-                <StockButton to="/about" className="flex-1">About</StockButton>
-                <StockButton to="/contact" className="flex-1">Contact</StockButton>
+                <StockButton to="/contact" className="flex-1" variant="primary">Contact</StockButton>
+                <StockButton to="/about" className="flex-1" variant="secondary">About</StockButton>
             </div>
         </div>
     )
