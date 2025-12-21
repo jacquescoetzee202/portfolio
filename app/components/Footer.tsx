@@ -75,12 +75,27 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <p className="font-medium text-gray-900 dark:text-white">Acknowledgements</p>
+                        <p className="font-medium text-gray-900 dark:text-white">Credits</p>
 
                         <ul className="mt-6 space-y-4 text-sm">
                             <li>
-                                <a href="#" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
-                                    reference undraw and open doodles
+                                <a
+                                    href="https://undraw.co"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                >
+                                    unDraw Illustrations
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.opendoodles.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                                >
+                                    Open Doodles
                                 </a>
                             </li>
                         </ul>
