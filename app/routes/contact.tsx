@@ -123,7 +123,7 @@ export default function Contact() {
             </p>
           ) : null}
         </div>
-        <StockButton className="w-full">
+        <StockButton className="w-full" type="submit">
           <div className="flex items-center justify-center">
             <div className="w-6 h-6"></div>
             <p className="grow">Let&apos;s talk</p>
@@ -133,6 +133,6 @@ export default function Contact() {
           </div>
         </StockButton>
       </Form>
-    </div>
+    </div >
   );
 }
