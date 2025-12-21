@@ -5,17 +5,17 @@ export default function Hero() {
     return (
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
-                <h2 className="text-base/7 font-semibold text-indigo-600">Hero Section</h2>
+                <h2 className="text-base/7 font-semibold text-indigo-600">Full-Stack Developer</h2>
                 <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">Jacques Coetzee</p>
-                <p className="mt-6 text-lg/8 text-gray-600">Some text to support hero section</p>
+                <p className="mt-6 text-lg/8 text-gray-600">Team-oriented developer crafting scalable, user-focused solutions built to last.</p>
                 <div className="relative mt-6 mx-auto w-64 h-64">
                     <img src={profileImage} alt="Profile Image" className="rounded-full w-full h-full object-cover border-4 border-white absolute top-1 left-1 shadow-lg" />
                 </div>
             </div>
-            <div className="mt-8 flex justify-center space-x-4">
-                <StockButton>About</StockButton>
-                <StockButton>Contact</StockButton>
+            <div className="mt-8 flex justify-center space-x-4 max-w-xl mx-auto">
+                <StockButton className="flex-1">About</StockButton>
+                <StockButton className="flex-1">Contact</StockButton>
             </div>
-        </div>  
+        </div>
     )
 };
