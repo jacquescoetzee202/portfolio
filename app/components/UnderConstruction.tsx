@@ -8,7 +8,7 @@ export default function UnderConstruction({
   pageName,
 }: UnderConstructionProps) {
   return (
-    <div className="flex flex-col bg-slate-50 px-4">
+    <div className="flex flex-col bg-slate-50 px-4 py-32">
       <div className="text-center">
         <img
           alt="under construction icon"

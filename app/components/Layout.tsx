@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="bg-gradient-to-br from-slate-200 to-slate-50 min-h-screen">
       <div className="mx-auto max-w-7xl bg-slate-50 min-h-screen">
         <Header />
-        <div className="mx-auto">{children}</div>
+        <div className="xl:border-x-2 border-black mx-auto">{children}</div>
         <Footer />
       </div>
     </div>
