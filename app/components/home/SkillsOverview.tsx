@@ -6,8 +6,12 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function SkillsOverview() {
-  const carearYears =
-    new Date().getFullYear() - new Date("2015,04,15").getFullYear();
+  const startDate = new Date("2015-04-15");
+  const now = new Date();
+  const monthsDiff =
+    (now.getFullYear() - startDate.getFullYear()) * 12 +
+    (now.getMonth() - startDate.getMonth());
+  const carearYears = Math.floor(monthsDiff / 12);
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl lg:text-center">
@@ -19,10 +23,9 @@ export default function SkillsOverview() {
         </p>
         <p className="mt-6 text-lg/8 text-gray-600">
           I have developed a range of skills in my {carearYears}yr working
-          carear. With well rounded experience ranging from the techinical
-          knowledge, decision making, to the soft skills required for teams to
-          deliver projects that add value to both business and end users.
-          Working towards and ultimately seeing imrpovement in both myself and
+          career. With well rounded experience ranging from technical
+          knowledge to soft skills and management. Delivering projects that add value to both business and end users.
+          Working towards and ultimately seeing improvement in both myself and
           others is my motivation.
         </p>
       </div>
@@ -60,8 +63,7 @@ export default function SkillsOverview() {
               Perfromance & Maintenance
             </dt>
             <dd className="mt-2 text-base/7 text-gray-600">
-              Quisque est vel vulputate cursus. Risus proin diam nunc commodo.
-              Lobortis auctor congue commodo diam neque.
+              Skilled in maintaining and optimizing event-driven microservices architectures with comprehensive observability metrics. Experienced managing and maintaining software releases for agriculture robotics, collaborating across software, firmware, network, and hardware teams to ensure reliable deployments.
             </dd>
           </div>
           <div className="relative pl-16">
